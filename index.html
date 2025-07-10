@@ -48,6 +48,7 @@
                 <h2>Research</h2>
                 <p>
                   I'm interested in Bimanual Manipulation, Imitation Learning, and Reinforcement Learning. 
+                  <br><br>* indicates equal contribution
                   <!-- Some papers are <span class="highlight">highlighted</span>. -->
                 </p>
               </td>
@@ -57,13 +58,14 @@
 
 
     <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='cat4d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="images/cat4d.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='images/cat4d.jpg' width="160">
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <div class="one" style="position: relative; width:100%; height:80px;">
+          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
+            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
+              <source src="images/SafeBimanual.png" type="video/mp4">
+            </video>
+          </div>
+          <img src='images/SafeBimanual.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
         </div>
         <script type="text/javascript">
           function cat4d_start() {
@@ -77,28 +79,109 @@
         </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://cat-4d.github.io/">
-			<span class="papertitle">CAT4D: Create Anything in 4D with Multi-View Video Diffusion Models
+        <!-- <a href="https://cat-4d.github.io/"> -->
+			<span class="papertitle">SafeBimanual: Diffusion-based Trajectory
+Optimization for Safe Bimanual Manipulation
 </span>
         </a>
         <br>
-				<a href="https://www.cs.columbia.edu/~rundi/">Rundi Wu</a>,
-				<a href="https://ruiqigao.github.io/">Ruiqi Gao</a>,
-				<a href="https://poolio.github.io/">Ben Poole</a>,
-				<a href="https://alextrevithick.github.io/">Alex Trevithick</a>,
-				<a href="https://www.cs.columbia.edu/~cxz/index.htm/">Changxi Zheng</a>,
-				<strong>Jonathan T. Barron</strong>,
-				<a href="https://holynski.org/">Aleksander Holynski</a>
+				
         <br>
-        <em>CVPR</em>, 2025 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+        <em>Under Review</em>
+        <!-- 2025 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font> -->
         <br>
-        <a href="https://cat-4d.github.io/">project page</a>
+        <a href=" ">project page</a>
         /
-        <a href="https://arxiv.org/abs/2411.18613">arXiv</a>
+        <a href=" ">arXiv</a>
         <p></p>
         <p>
-				An approach for turning a video into a 4D radiance field that can be rendered in real-time. When combined with a text-to-video model, this enables text-to-4D.
-        </p>
+A test-time trajectory optimization framework for any pre-trained diffusion-based bimanual manipulation 
+policies, which imposes the safety constraints on bimanual actions.         </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <div class="one" style="position: relative; width:100%; height:80px;">
+          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
+            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
+              <source src="images/ManiGaussian++.png" type="video/mp4">
+            </video>
+          </div>
+          <img src='images/ManiGaussian++.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
+        </div>
+        <script type="text/javascript">
+          function cat4d_start() {
+            document.getElementById('cat4d_image').style.opacity = "1";
+          }
+
+          function cat4d_stop() {
+            document.getElementById('cat4d_image').style.opacity = "0";
+          }
+          cat4d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://www.arxiv.org/abs/2506.19842">
+			<span class="papertitle">ManiGaussian++: Dynamic Gaussian Splatting for Multi-task Bimanual Manipulation</span>
+        </a>
+        <br>
+				Tengbo Yu<sup>*</sup>, Guanxing Lu<sup>*</sup>, Zaijia Yang<sup>*</sup>, <strong>Haoyuan Deng</strong>, Season Si Chen, Jiwen Lu, Wenbo Ding, Guoqiang Hu, Yansong Tang<sup>†</sup>, Ziwei Wang
+        <br>
+        <em>IROS</em>, 2025 &nbsp 
+        <font color="red"><strong>(Oral Presentation)</strong></font>
+        <br>
+        <a href="https://www.arxiv.org/abs/2506.19842">arXiv</a>
+        /
+        <a href="https://github.com/April-Yz/ManiGaussian_Bimanual">Code</a>
+        <p></p>
+        <p>
+          A novel framework that addresses the challenges of multi-task bimanual manipulation through hierarchical Gaussian world modeling.      </td>
+    </tr>
+
+
+    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <div class="one" style="position: relative; width:100%; height:80px;">
+          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
+            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
+              <source src="images/Anybimanual.png" type="video/mp4">
+            </video>
+          </div>
+          <img src='images/Anybimanual.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
+        </div>
+        <script type="text/javascript">
+          function cat4d_start() {
+            document.getElementById('cat4d_image').style.opacity = "1";
+          }
+
+          function cat4d_stop() {
+            document.getElementById('cat4d_image').style.opacity = "0";
+          }
+          cat4d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://anybimanual.github.io/">
+			<span class="papertitle">AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation</span>
+        </a>
+        <br>
+				Guanxing Lu<sup>*</sup>,
+        Tengbo Yu<sup>*</sup>,
+        <strong>Haoyuan Deng</strong>,
+				Season Si Chen, Yansong Tang<sup>†</sup>, Ziwei Wang
+        <br>
+        <em>ICCV</em>, 2025 &nbsp 
+        <!-- <font color="red"><strong>(Oral Presentation)</strong></font> -->
+        <br>
+        <a href="https://anybimanual.github.io/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2412.06779">arXiv</a>
+        /
+        <a href="https://github.com/Tengbo-Yu/AnyBimanual">Code</a>
+        <p></p>
+        <p>
+          A framework designed to transfer pre-trained unimanual manipulation policies to multi-task bimanual manipulation with few bimanual demonstrations.        </p>
       </td>
     </tr>
 
