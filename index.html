@@ -24,7 +24,7 @@
                   Deng Haoyuan (邓皓元)
                 </p>
                 <p>
-		I'm a first-year PhD student at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, supervised by <a href="https://ziweiwangthu.github.io/">Prof. Ziwei Wang</a> in the <a href="https://pine-lab-ntu.github.io/">PINE Lab</a>. My research focuses on <b>Embodied AI</b>, with interests in Bimanual Manipulation, Imitation Learning, and Reinforcement Learning. <br><br>
+		I'm a first-year PhD student at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, supervised by <a href="https://ziweiwangthu.github.io/">Prof. Ziwei Wang</a> in the <a href="https://pine-lab-ntu.github.io/">PINE Lab</a>. My research focuses on <b>Embodied AI</b>, with interests in Real-World Reinforcement Learning, Bimanual Manipulation, and Imitation Learning. I work on <b>Robot Foundation Models</b> to enable robots to generalize across diverse tasks. <br><br>
     Previously, I received my Bachelor's degree from <a href="https://www.whu.edu.cn/">Wuhan University</a>, where I worked with <a href="http://eis.whu.edu.cn/index/szdwDetail?rsh=00009013&newskind_id=20160320222232376BLVmSJOqWMGp7">Prof. Guangyi Yang</a>. I have also worked as a Senior Scientist Intern at <a href="https://www.a-star.edu.sg/">A*STAR</a> in Singapore.</a>
                 </p>
                 <p style="text-align:center">
@@ -43,12 +43,26 @@
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>News</h2>
+                <ul>
+                  <li><strong>[2026-04]</strong> One paper is accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a>.</li>
+                  <li><strong>[2026-01]</strong> Two papers are accepted to ICRA 2026.</li>
+                  <li><strong>[2025-11]</strong> Survey paper "A Survey on Reinforcement Learning of Vision-Language-Action Models for Robotic Manipulation" is available on <a href="https://doi.org/10.36227/techrxiv.176531955.54563920/v1">TechRxiv</a>.</li>
+                  <li><strong>[2025-07]</strong> One paper is accepted to CoRL 2025.</li>
+                  <li><strong>[2025-07]</strong> One paper is accepted to IROS 2025.</li>
+                  <li><strong>[2025-06]</strong> One paper is accepted to ICCV 2025.</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>Research</h2>
                 <p>
-                  I'm interested in Bimanual Manipulation, Imitation Learning, and Reinforcement Learning. 
-                  <br><br>* indicates equal contribution
+                  I'm interested in Real-World Reinforcement Learning, Bimanual Manipulation, Imitation Learning, and Robot Foundation Models.
                   <!-- Some papers are <span class="highlight">highlighted</span>. -->
                 </p>
               </td>
@@ -57,9 +71,46 @@
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 <!-- bgcolor="#ffffd0" -->
+
+    <tr>
+      <td colspan="2" style="padding:12px 16px 4px;">
+        <h2 style="margin:0;">Selected Publications</h2>
+        <p style="font-size:13px;color:#555;margin:4px 0 0;">* indicates equal contribution</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/E2HiL.png' style="width:100%; height:140px; object-fit:cover; border-radius: 8px;" alt="E2HiL">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2601.19969">
+          <span class="papertitle">E2HiL: Entropy-Guided Sample Selection for Efficient Real-World Human-in-the-Loop Reinforcement Learning</span>
+        </a>
+        <br>
+        <strong>Haoyuan Deng</strong>,
+        Yudong Lin, Yuanjiang Xue, Haoyang Du, Qianzhun Wang, Boyang Zhou, Zhenyu Wu,
+        Ziwei Wang<sup>†</sup>
+        <br>
+        <em><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a></em>, 2026 &nbsp
+        <br>
+        <a href="https://e2hil.github.io/">project page</a>
+        /
+        <a href="https://e2hil.github.io/resources/main_n__Stabilizing_Human_in_the_Loop_Reinforcement_Learning_through_Entropy_Bounded_Sample_Selection_5.pdf">Paper</a>
+        /
+        <a href="https://github.com/E2HiL/E2HiL-project-a1x">Code</a>
+        <!-- / -->
+        <!-- <a href="https://github.com/E2HiL/E2HiL-project-lerobo">Code (Lerobot)</a> -->
+        <p></p>
+        <p>
+          A sample-efficient human-in-the-loop RL framework using entropy-guided influence functions to actively select informative training samples.
+        </p>
+      </td>
+    </tr>
+
     <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" >
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <div class="one" style="position: relative; width:100%; height:80px;">
+        <div class="one" style="position: relative; width:100%; height:100px;">
           <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
             <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
               <source src="images/Safebimanual.png" type="video/mp4">
@@ -80,7 +131,7 @@
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <a href="https://arxiv.org/abs/2508.18268">
-			<span class="papertitle">SafeBimanual: Diffusion-based Trajectory Optimization for Safe Bimanual Manipulation 
+			<span class="papertitle">SafeBimanual: Diffusion-based Trajectory Optimization for Safe Bimanual Manipulation
       </span>
         </a>
         <br>
@@ -98,49 +149,60 @@
         <a href="https://github.com/Denghaoyuan123/SafeBimanual">Code</a>
         <p></p>
         <p>
-A test-time trajectory optimization framework for any pre-trained diffusion-based bimanual manipulation 
+A test-time trajectory optimization framework for any pre-trained diffusion-based bimanual manipulation
 policies, which imposes the safety constraints on bimanual actions.         </p>
       </td>
     </tr>
 
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
+    <tr>
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <div class="one" style="position: relative; width:100%; height:80px;">
-          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
-            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
-              <source src="images/ManiGaussian++.png" type="video/mp4">
-            </video>
-          </div>
-          <img src='images/ManiGaussian++.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
-        </div>
-        <script type="text/javascript">
-          function cat4d_start() {
-            document.getElementById('cat4d_image').style.opacity = "1";
-          }
-
-          function cat4d_stop() {
-            document.getElementById('cat4d_image').style.opacity = "0";
-          }
-          cat4d_stop()
-        </script>
+        <img src='images/VLA-RL_Survey.png' style="width:100%; height:100px; object-fit:cover; border-radius: 8px;" alt="RL-VLA Survey">
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
-        <a href="https://www.arxiv.org/abs/2506.19842">
-			<span class="papertitle">ManiGaussian++: Dynamic Gaussian Splatting for Multi-task Bimanual Manipulation</span>
+        <a href="https://doi.org/10.36227/techrxiv.176531955.54563920/v1">
+          <span class="papertitle">A Survey on Reinforcement Learning of Vision-Language-Action Models for Robotic Manipulation</span>
         </a>
         <br>
-				Tengbo Yu<sup>*</sup>, Guanxing Lu<sup>*</sup>, Zaijia Yang<sup>*</sup>, <strong>Haoyuan Deng</strong>, Season Si Chen, Jiwen Lu, Wenbo Ding, Guoqiang Hu, Yansong Tang<sup>†</sup>, Ziwei Wang
+        <strong>Haoyuan Deng*</strong>,
+        Zhenyu Wu*, Haichao Liu*, Wenkai Guo, Yuquan Xue, Ziyu Shan, Chuanrui Zhang, Bofang Jia, Yuan Ling, Guanxing Lu, Ziwei Wang<sup>†</sup>
         <br>
-        <em>IROS</em>, 2025 &nbsp 
+        <em>TechRxiv</em>, 2025 &nbsp
         <br>
-        <a href="https://www.arxiv.org/abs/2506.19842">arXiv</a>
+        <a href="https://doi.org/10.36227/techrxiv.176531955.54563920/v1">Paper</a>
         /
-        <a href="https://github.com/April-Yz/ManiGaussian_Bimanual">Code</a>
+        <a href="https://github.com/Denghaoyuan123/Awesome-RL-VLA">GitHub</a>
+        &nbsp;<img src="https://img.shields.io/github/stars/Denghaoyuan123/Awesome-RL-VLA?style=social" alt="GitHub Stars" style="vertical-align:middle">
         <p></p>
         <p>
-          A novel framework that addresses the challenges of multi-task bimanual manipulation through hierarchical Gaussian world modeling.      </td>
+          The first comprehensive survey on reinforcement learning of vision-language-action models for robotic manipulation.
+        </p>
+      </td>
     </tr>
 
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/VLAReasoner.png' style="width:100%; height:160px; object-fit:cover; border-radius: 8px;" alt="VLA-Reasoner">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2509.22643">
+          <span class="papertitle">VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search</span>
+        </a>
+        <br>
+        Wenkai Guo*, Guanxing Lu*, <strong>Haoyuan Deng</strong>, Zhenyu Wu, Yansong Tang, Ziwei Wang<sup>†</sup>
+        <br>
+        <em>ICRA</em>, 2026 &nbsp
+        <br>
+        <a href="https://vla-reasoner.github.io/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2509.22643">arXiv</a>
+        /
+        <a href="https://github.com/KevinGuo07/VLA-Reasoner">Code</a>
+        <p></p>
+        <p>
+          A plug-in framework that augments vision-language-action models with long-horizon planning via online Monte Carlo Tree Search and kernel density estimation-based confidence sampling.
+        </p>
+      </td>
+    </tr>
 
     <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
       <td style="padding:16px; width:30%; vertical-align:middle">
@@ -173,7 +235,7 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
         <strong>Haoyuan Deng</strong>,
 				Season Si Chen, Yansong Tang<sup>†</sup>, Ziwei Wang
         <br>
-        <em>ICCV</em>, 2025 &nbsp 
+        <em>ICCV</em>, 2025 &nbsp
         <!-- <font color="red"><strong>(Oral Presentation)</strong></font> -->
         <br>
         <a href="https://anybimanual.github.io/">project page</a>
@@ -184,6 +246,116 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
         <p></p>
         <p>
           A framework designed to transfer pre-trained unimanual manipulation policies to multi-task bimanual manipulation with few bimanual demonstrations.        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/Nora.png' style="width:100%; height:110px; object-fit:cover; border-radius: 8px;" alt="NORA-1.5">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2511.14659">
+          <span class="papertitle">NORA-1.5: A Vision-Language-Action Model Trained using World Model- and Action-based Preference Rewards</span>
+        </a>
+        <br>
+        Chia-Yu Hung, Navonil Majumder, <strong>Haoyuan Deng</strong>,
+        Liu Renhang, Yankang Ang, Amir Zadeh, Chuan Li, Dorien Herremans, Ziwei Wang, Soujanya Poria
+        <br>
+        <em>Under Review</em> &nbsp
+        <br>
+        <a href="https://arxiv.org/abs/2511.14659">arXiv</a>
+        <p></p>
+        <p>
+          A vision-language-action model trained with preference rewards derived from world model predictions and action quality assessments, enabling more robust and generalizable robot manipulation.
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" style="padding:12px 16px 4px;">
+        <h2 style="margin:0;">Other Publications</h2>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/UniManip.png' style="width:100%; height:80px; object-fit:cover; border-radius: 8px;" alt="UniManip">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2602.13086">
+          <span class="papertitle">UniManip: General-Purpose Zero-Shot Robotic Manipulation with Agentic Operational Graph</span>
+        </a>
+        <br>
+        Haichao Liu, Yuanjiang Xue, Yuheng Zhou, <strong>Haoyuan Deng</strong>,
+        Yinan Liang, Lihua Xie, Ziwei Wang<sup>†</sup>
+        <br>
+        <em>Under Review</em> &nbsp
+        <br>
+        <a href="https://arxiv.org/abs/2602.13086">arXiv</a>
+        <p></p>
+        <p>
+          A general-purpose zero-shot manipulation framework using an agentic operational graph to decompose and execute complex manipulation tasks without task-specific training data.
+        </p>
+      </td>
+    </tr>
+
+    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <div class="one" style="position: relative; width:100%; height:80px;">
+          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
+            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
+              <source src="images/ManiGaussian++.png" type="video/mp4">
+            </video>
+          </div>
+          <img src='images/ManiGaussian++.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
+        </div>
+        <script type="text/javascript">
+          function cat4d_start() {
+            document.getElementById('cat4d_image').style.opacity = "1";
+          }
+
+          function cat4d_stop() {
+            document.getElementById('cat4d_image').style.opacity = "0";
+          }
+          cat4d_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://www.arxiv.org/abs/2506.19842">
+			<span class="papertitle">ManiGaussian++: Dynamic Gaussian Splatting for Multi-task Bimanual Manipulation</span>
+        </a>
+        <br>
+				Tengbo Yu<sup>*</sup>, Guanxing Lu<sup>*</sup>, Zaijia Yang<sup>*</sup>, <strong>Haoyuan Deng</strong>, Season Si Chen, Jiwen Lu, Wenbo Ding, Guoqiang Hu, Yansong Tang<sup>†</sup>, Ziwei Wang
+        <br>
+        <em>IROS</em>, 2025 &nbsp
+        <br>
+        <a href="https://www.arxiv.org/abs/2506.19842">arXiv</a>
+        /
+        <a href="https://github.com/April-Yz/ManiGaussian_Bimanual">Code</a>
+        <p></p>
+        <p>
+          A novel framework that addresses the challenges of multi-task bimanual manipulation through hierarchical Gaussian world modeling.      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/MapVLA.png' style="width:100%; height:100px; object-fit:cover; border-radius: 8px;" alt="MAP-VLA">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2511.09516">
+          <span class="papertitle">MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic Manipulation</span>
+        </a>
+        <br>
+        Runhao Li, Wenkai Guo, Zhenyu Wu, Changyuan Wang, <strong>Haoyuan Deng</strong>,
+        Zhenyu Weng, Yap-Peng Tan, Ziwei Wang<sup>†</sup>
+        <br>
+        <em>ICRA</em>, 2026 &nbsp
+        <br>
+        <a href="https://arxiv.org/abs/2511.09516">arXiv</a>
+        <p></p>
+        <p>
+          A plug-and-play memory-augmented framework for frozen VLA models that constructs a memory library from demonstrations and retrieves relevant memories via trajectory similarity matching for long-horizon manipulation.
+        </p>
       </td>
     </tr>
 
@@ -221,7 +393,8 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
       <td style="padding:16px;width:100%;vertical-align:middle">
         <h2>Academic Services</h2>
         <ul>
-          <li><b>Conference Reviewer:</b> CoRL 2025, ICRA 2025</li>
+          <li><b>Journal Reviewer:</b> IEEE RA-L</li>
+          <li><b>Conference Reviewer:</b> ICRA, IROS, CoRL</li>
         </ul>
       </td>
     </tr>
