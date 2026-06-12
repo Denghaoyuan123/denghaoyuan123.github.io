@@ -27,13 +27,13 @@
 		I'm a first-year PhD student at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, supervised by <a href="https://ziweiwangthu.github.io/">Prof. Ziwei Wang</a> in the <a href="https://pine-lab-ntu.github.io/">PINE Lab</a>. My research focuses on <b>Embodied AI</b>, with interests in Real-World Reinforcement Learning, Bimanual Manipulation, and Imitation Learning. I work on <b>Robot Foundation Models</b> to enable robots to generalize across diverse tasks. <br><br>
     Previously, I received my Bachelor's degree from <a href="https://www.whu.edu.cn/">Wuhan University</a>, where I worked with <a href="http://eis.whu.edu.cn/index/szdwDetail?rsh=00009013&newskind_id=20160320222232376BLVmSJOqWMGp7">Prof. Guangyi Yang</a>. I have also worked as a Senior Scientist Intern at <a href="https://www.a-star.edu.sg/">A*STAR</a> in Singapore.</a>
                 </p>
-                <p style="text-align:center">
-                  <a href="haoyuan.deng@ntu.edu.sg">Email</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp; -->
-                  <a href="https://scholar.google.com/citations?user=gmreRGsAAAAJ&hl=zh-CN">Scholar</a> &nbsp;/&nbsp;
-                  <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp;/&nbsp; -->
-                  <a href="https://www.linkedin.com/in/haoyuan-deng-b7234a270/">Linkedin</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/Denghaoyuan123">Github</a>&nbsp;/&nbsp;
+                <p class="links" style="text-align:center">
+                  <a href="mailto:haoyuan.deng@ntu.edu.sg">Email</a>
+                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> -->
+                  <a href="https://scholar.google.com/citations?user=gmreRGsAAAAJ&hl=zh-CN">Scholar</a>
+                  <!-- <a href="https://twitter.com/jon_barron">Twitter</a> -->
+                  <a href="https://www.linkedin.com/in/haoyuan-deng-b7234a270/">Linkedin</a>
+                  <a href="https://github.com/Denghaoyuan123">Github</a>
                   <a href="data/JonBarron-CV.pdf">CV</a>
                 </p>
               </td>
@@ -46,13 +46,15 @@
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>News</h2>
-                <ul>
-                  <li><strong>[2026-04]</strong> One paper is accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a>.</li>
-                  <li><strong>[2026-01]</strong> Two papers are accepted to ICRA 2026.</li>
+                <ul class="news">
+                  <li><strong>[2026-04]</strong> One paper(E2HiL) is accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a>.</li>
+                  <li><strong>[2026-01]</strong> Two papers(VLA-Reasoner and MAP-VLA) are accepted to ICRA 2026.</li>
                   <li><strong>[2025-11]</strong> Survey paper "A Survey on Reinforcement Learning of Vision-Language-Action Models for Robotic Manipulation" is available on <a href="https://doi.org/10.36227/techrxiv.176531955.54563920/v1">TechRxiv</a>.</li>
-                  <li><strong>[2025-07]</strong> One paper is accepted to CoRL 2025.</li>
-                  <li><strong>[2025-07]</strong> One paper is accepted to IROS 2025.</li>
-                  <li><strong>[2025-06]</strong> One paper is accepted to ICCV 2025.</li>
+                  <li><strong>[2025-10]</strong> We get the 2nd place in <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">Challenge of Multimodal Robot Learning in InternUtopia and Real World</a> and 1st place in simulation stage at IROS 2025.</li>
+                  <li><strong>[2025-08]</strong> Start my PhD study at NTU!</li>
+                  <li><strong>[2025-08]</strong> One paper(SafeBimanual) is accepted to CoRL 2025.</li>
+                  <li><strong>[2025-07]</strong> One paper(Manigaussian++) is accepted to IROS 2025.</li>
+                  <li><strong>[2025-06]</strong> One paper(AnyBimanual) is accepted to ICCV 2025.</li>
                 </ul>
               </td>
             </tr>
@@ -135,26 +137,9 @@
       </td>
     </tr>
 
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()" >
+    <tr>
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <div class="one" style="position: relative; width:100%; height:100px;">
-          <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
-            <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
-              <source src="images/Safebimanual.png" type="video/mp4">
-            </video>
-          </div>
-          <img src='images/Safebimanual.png' style="width:100%; height:100%; object-fit:cover; border-radius: 8px;">
-        </div>
-        <script type="text/javascript">
-          function cat4d_start() {
-            document.getElementById('cat4d_image').style.opacity = "1";
-          }
-
-          function cat4d_stop() {
-            document.getElementById('cat4d_image').style.opacity = "0";
-          }
-          cat4d_stop()
-        </script>
+        <img src='images/SafeBimanual.gif' style="width:100%; height:120px; object-fit:cover; border-radius: 8px;" alt="SafeBimanual">
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <a href="https://arxiv.org/abs/2508.18268">
@@ -208,7 +193,7 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
 
     <tr>
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <img src='images/VLAReasoner.png' style="width:100%; height:160px; object-fit:cover; border-radius: 8px;" alt="VLA-Reasoner">
+        <img src='images/vla-reasoner.gif' style="width:100%; height:120px; object-fit:cover; border-radius: 8px;" alt="VLA-Reasoner">
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
         <a href="https://arxiv.org/abs/2509.22643">
@@ -278,7 +263,7 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
 
     <tr>
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <img src='images/Nora.png' style="width:100%; height:110px; object-fit:cover; border-radius: 8px;" alt="NORA-1.5">
+        <img src='images/Nora.png' style="width:100%; height:120px; object-fit:cover; border-radius: 8px;" alt="NORA-1.5">
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
         <a href="https://arxiv.org/abs/2511.14659">
@@ -306,7 +291,7 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
 
     <tr>
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <img src='images/UniManip.png' style="width:100%; height:80px; object-fit:cover; border-radius: 8px;" alt="UniManip">
+        <img src='images/UniManip.png' style="width:100%; height:90px; object-fit:cover; border-radius: 8px;" alt="UniManip">
       </td>
       <td style="padding:8px;width:70%;vertical-align:middle">
         <a href="https://arxiv.org/abs/2602.13086">
@@ -328,7 +313,7 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
 
     <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
       <td style="padding:16px; width:30%; vertical-align:middle">
-        <div class="one" style="position: relative; width:100%; height:80px;">
+        <div class="one" style="position: relative; width:100%; height:90px;">
           <div class="two" id='cat4d_image' style="position:absolute; top:0; left:0; width:100%; height:100%;">
             <video style="width:100%; height:100%; object-fit: cover; border-radius: 8px;" muted autoplay loop>
               <source src="images/ManiGaussian++.png" type="video/mp4">

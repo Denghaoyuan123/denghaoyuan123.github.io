@@ -63,15 +63,34 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-a {
-  color: #1772d0;
-  text-decoration: none;
+/* =========================================================
+   Color palette
+   --------------------------------------------------------- */
+:root {
+  --accent:        #1f6feb;   /* primary blue            */
+  --accent-soft:   #eaf2ff;   /* tinted badge / ring bg  */
+  --accent-hover:  #f5821f;   /* warm orange on hover    */
+  --ink:           #1f2733;   /* main body text          */
+  --heading:       #16233b;   /* dark navy headings      */
+  --muted:         #64748b;   /* secondary / meta text   */
+  --line:          #e6e9ee;   /* hairline borders        */
+  --page:          #f3f5f9;   /* page background         */
+  --card:          #ffffff;   /* content card background */
 }
 
-a:focus,
-a:hover {
-  color: #f09228;
-  text-decoration: none;
+/* =========================================================
+   Base
+   --------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.65;
+  background: linear-gradient(180deg, #e9eef6 0%, var(--page) 260px, var(--page) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -81,25 +100,66 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
 }
 
+::selection {
+  background: var(--accent-soft);
+  color: var(--heading);
+}
+
+/* The outermost 800px table becomes a floating content card */
+body > table {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 34px rgba(20, 30, 50, 0.09);
+  margin-top: 38px !important;
+  margin-bottom: 52px !important;
+}
+
+/* =========================================================
+   Links
+   --------------------------------------------------------- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+a:focus,
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+/* =========================================================
+   Headings
+   --------------------------------------------------------- */
 h2 {
-  margin: 0;
-  font-weight: normal;
+  position: relative;
+  margin: 0 0 12px;
+  padding: 0 0 8px 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--heading);
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--line);
 }
 
-.papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 44px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--accent);
 }
 
 .name {
@@ -107,8 +167,122 @@ h2 {
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
 }
 
+/* =========================================================
+   Publications
+   --------------------------------------------------------- */
+.papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+a:hover .papertitle { color: var(--accent-hover); }
+
+em { color: var(--muted); }
+
+/* Paper thumbnail cells are the only <td> at exactly 30% width,
+   so this scopes media styling to publication thumbnails. */
+td[style*="width:30%"] img,
+td[style*="width:30%"] video {
+  box-shadow: 0 3px 12px rgba(20, 30, 50, 0.13);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+td[style*="width:30%"] img:hover,
+td[style*="width:30%"] video:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(20, 30, 50, 0.20);
+}
+
+/* =========================================================
+   Lists (News, Academic Services, Honors)
+   --------------------------------------------------------- */
+ul {
+  margin: 6px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 9px;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* News date pills (scoped via .news on the <ul>) */
+.news li { padding-left: 0; }
+.news li::before { display: none; }
+
+.news li strong {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 1px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 20px;
+  vertical-align: 1px;
+}
+
+/* =========================================================
+   Profile photo
+   --------------------------------------------------------- */
+img.hoverZoomLink {
+  box-shadow: 0 0 0 5px var(--accent-soft), 0 10px 26px rgba(20, 30, 50, 0.16);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+img.hoverZoomLink:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 5px #dfeaff, 0 14px 32px rgba(20, 30, 50, 0.24);
+}
+
+/* =========================================================
+   Contact links (pill buttons)
+   --------------------------------------------------------- */
+.links a {
+  display: inline-block;
+  margin: 5px 3px;
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  background: #fff;
+  border: 1px solid #d9dee6;
+  border-radius: 22px;
+  transition: all .15s ease;
+}
+
+.links a:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 111, 235, 0.30);
+}
+
+/* =========================================================
+   Legacy template classes (kept — still used by hover videos)
+   --------------------------------------------------------- */
 .one {
   width: 160px;
   height: 160px;
@@ -135,8 +309,8 @@ span.highlight {
 }
 
 .colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
 }
