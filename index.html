@@ -47,6 +47,8 @@
               <td style="padding:16px;width:100%;vertical-align:middle">
                 <h2>News</h2>
                 <ul class="news">
+                  <li><strong>[2026-09]</strong> One paper (<a href="https://denghaoyuan123.github.io/UniIntervene-project/">UniIntervene</a>) is accepted to CoRL 2026.</li>
+                  <li><strong>[2026-06]</strong> One paper (<a href="https://ieeexplore.ieee.org/abstract/document/11668937/">REMA</a>) is accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a>.</li>
                   <li><strong>[2026-04]</strong> One paper(E2HiL) is accepted to <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a>.</li>
                   <li><strong>[2026-01]</strong> Two papers(VLA-Reasoner and MAP-VLA) are accepted to ICRA 2026.</li>
                   <li><strong>[2025-11]</strong> Survey paper "A Survey on Reinforcement Learning of Vision-Language-Action Models for Robotic Manipulation" is available on <a href="https://doi.org/10.36227/techrxiv.176531955.54563920/v1">TechRxiv</a>.</li>
@@ -72,12 +74,51 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-<!-- bgcolor="#ffffd0" -->
+<!-- Within Recent Works and Other Publications, sort by Haoyuan Deng's author position,
+     then accepted publications before preprints, then newest date first. -->
 
     <tr>
       <td colspan="2" style="padding:12px 16px 4px;">
         <h2 style="margin:0;">Selected Publications</h2>
         <p style="font-size:13px;color:#555;margin:4px 0 0;">* indicates equal contribution</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <!-- Teaser (Figure 1): https://arxiv.org/html/2609.01596v1/Teaser1.png -->
+        <a href="images/Facet-0.jpg">
+          <img src="images/Facet-0.jpg" style="width:100%; height:auto; object-fit:contain; border-radius: 8px;" alt="Facet-0 paper teaser showing GPU, RAM, disk, CPU, and CPU lever assembly">
+        </a>
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://pine-lab-ntu.github.io/facet-0/">
+          <span class="papertitle">Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation</span>
+        </a>
+        <br>
+        <strong>Haoyuan Deng*</strong>,
+        Haichao Liu*, Wenkai Guo*, Yuan Ling, Zaijia Yang, Yuanjiang Xue, Haosheng Sun, Liangzi Wang,
+        Ziwei Wang<sup>†</sup>
+        <br>
+        <em>arXiv</em>, 2026 &nbsp;
+        <br>
+        <a href="https://pine-lab-ntu.github.io/facet-0/">project page</a>
+        /
+        <a href="https://arxiv.org/abs/2609.01596">arXiv</a>
+        /
+        <a href="https://huggingface.co/datasets/Pinelab/ManuFacet-1K">Dataset</a>
+        /
+        <a href="https://github.com/PINE-Lab-NTU/FACET">Code</a>
+        <p></p>
+        <p>
+          A robotic foundation model combining vision, language, and force sensing with reinforcement learning for precise contact-rich assembly, trained on the 1,000-hour ManuFacet-1K dataset.
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" style="padding:12px 16px 4px;">
+        <h2 style="margin:0;">Recent Works</h2>
       </td>
     </tr>
 
@@ -96,7 +137,7 @@
         Yitong Gao, Yudong Lin, Haichao Liu, Zhenyu Wu,
         Ziwei Wang<sup>†</sup>
         <br>
-        <em>Under Review</em> &nbsp
+        <em>CoRL</em>, 2026 &nbsp
         <br>
         <a href="https://denghaoyuan123.github.io/UniIntervene-project/">project page</a>
         /
@@ -289,28 +330,6 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
       </td>
     </tr>
 
-    <tr>
-      <td style="padding:16px; width:30%; vertical-align:middle">
-        <img src='images/UniManip.png' style="width:100%; height:90px; object-fit:cover; border-radius: 8px;" alt="UniManip">
-      </td>
-      <td style="padding:8px;width:70%;vertical-align:middle">
-        <a href="https://arxiv.org/abs/2602.13086">
-          <span class="papertitle">UniManip: General-Purpose Zero-Shot Robotic Manipulation with Agentic Operational Graph</span>
-        </a>
-        <br>
-        Haichao Liu, Yuanjiang Xue, Yuheng Zhou, <strong>Haoyuan Deng</strong>,
-        Yinan Liang, Lihua Xie, Ziwei Wang<sup>†</sup>
-        <br>
-        <em>Under Review</em> &nbsp
-        <br>
-        <a href="https://arxiv.org/abs/2602.13086">arXiv</a>
-        <p></p>
-        <p>
-          A general-purpose zero-shot manipulation framework using an agentic operational graph to decompose and execute complex manipulation tasks without task-specific training data.
-        </p>
-      </td>
-    </tr>
-
     <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
       <td style="padding:16px; width:30%; vertical-align:middle">
         <div class="one" style="position: relative; width:100%; height:90px;">
@@ -347,6 +366,52 @@ policies, which imposes the safety constraints on bimanual actions.         </p>
         <p></p>
         <p>
           A novel framework that addresses the challenges of multi-task bimanual manipulation through hierarchical Gaussian world modeling.      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src='images/UniManip.png' style="width:100%; height:90px; object-fit:cover; border-radius: 8px;" alt="UniManip">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2602.13086">
+          <span class="papertitle">UniManip: General-Purpose Zero-Shot Robotic Manipulation with Agentic Operational Graph</span>
+        </a>
+        <br>
+        Haichao Liu, Yuanjiang Xue, Yuheng Zhou, <strong>Haoyuan Deng</strong>,
+        Yinan Liang, Lihua Xie, Ziwei Wang<sup>†</sup>
+        <br>
+        <em>Under Review</em> &nbsp
+        <br>
+        <a href="https://arxiv.org/abs/2602.13086">arXiv</a>
+        <p></p>
+        <p>
+          A general-purpose zero-shot manipulation framework using an agentic operational graph to decompose and execute complex manipulation tasks without task-specific training data.
+        </p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding:16px; width:30%; vertical-align:middle">
+        <img src="images/REMA.jpg" style="width:100%; height:120px; object-fit:cover; border-radius: 8px;" alt="REMA real-world robotic manipulation demo">
+      </td>
+      <td style="padding:8px;width:70%;vertical-align:middle">
+        <a href="https://ieeexplore.ieee.org/abstract/document/11668937/">
+          <span class="papertitle">Efficient Online Robotic Reinforcement Learning with Explicit Manifold Alignment</span>
+        </a>
+        <br>
+        Wenkai Guo, Peizhi Tang, Yukun Bai, Ziming Yan, <strong>Haoyuan Deng</strong>,
+        Guanxing Lu, Shijie Li, Ziwei Wang
+        <br>
+        <em><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7083369">RA-L</a></em>, 2026 &nbsp;
+        <br>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11668937/">Paper</a>
+        /
+        <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=zh-CN&amp;user=5XqiG60AAAAJ&amp;sortby=pubdate&amp;citation_for_view=5XqiG60AAAAJ:UeHWp8X0CEIC">Google Scholar</a>
+        <p></p>
+        <p>
+          REMA improves online robotic reinforcement learning by aligning exploration with a manifold of successful demonstrations, preserving informative near-success trials while penalizing uninformative deviations.
+        </p>
+      </td>
     </tr>
 
     <tr>
