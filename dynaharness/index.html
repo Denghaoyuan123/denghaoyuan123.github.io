@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DynaHarness</title>
+  <meta name="description" content="DynaHarness: a dynamic physical harness for self-evolving robot agents. Fast-slow governance of a frozen VLA and analytic skills under one execution contract, with attribution-driven, regression-gated self-evolution.">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav on-dark" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#hero"><img src="assets/img/logo.png" alt="DynaHarness logo"><span>DynaHarness</span></a>
+    <div class="links">
+      <a href="#why">Why</a>
+      <a href="#method">Method</a>
+      <a href="#episode">Episode</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#results">Results</a>
+      <a href="#real">Real robot</a>
+      <a href="#baselines">Baselines</a>
+      <a href="#bibtex">BibTeX</a>
+      <a class="code" href="https://github.com/Denghaoyuan123/DynaHarness" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>Code</a>
+      <a class="cta" href="assets/paper_arxiv.pdf" target="_blank" rel="noopener">Paper</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <img class="hero-logo" src="assets/img/logo.png" alt="DynaHarness">
+      <h1><span class="dyna">Dyna</span><span class="harn">Harness</span>: A Dynamic Physical Harness for Self-Evolving Robot Agents</h1>
+      <p class="lead">A slow brain proposes. A fast brain grounds, monitors, refuses and substitutes at 2 Hz. One execution contract bounds every command to a frozen VLA, analytic skills and recovery skills. Failure evidence becomes validated capability revisions.</p>
+      <div class="authors"><a href="https://denghaoyuan123.github.io/" target="_blank" rel="noopener">Haoyuan Deng</a><sup>1</sup> · Jiebin Liu<sup>1</sup> · Tengxiao Zhang<sup>1</sup> · Langning Yan<sup>1</sup> · <a href="https://hyecao.github.io/homepage/" target="_blank" rel="noopener">Hongye Cao</a><sup>2</sup> · <a href="https://ziweiwangthu.github.io/" target="_blank" rel="noopener">Ziwei Wang</a><sup>1&dagger;</sup></div>
+      <div class="affil"><sup>1</sup>Nanyang Technological University &nbsp;·&nbsp; <sup>2</sup>Nanjing University &nbsp;·&nbsp; <sup>&dagger;</sup>corresponding author</div>
+      <div class="btns">
+        <a class="btn primary" href="assets/paper_arxiv.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Paper (PDF)</a>
+        <a class="btn ghost" href="https://github.com/Denghaoyuan123/DynaHarness" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>Code (GitHub)</a>
+        <a class="btn ghost" href="#results">Interactive results</a>
+        <a class="btn ghost" href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="scene-card">
+        <div class="scene-topbar">
+          <span>Task</span><span class="task" id="scene-task">"put the mug in the basket"</span>
+          <span class="pill neutral" id="scene-outcome"></span>
+          <span class="spacer"></span>
+          <div class="seg" role="group" aria-label="Execution mode">
+            <button class="active" data-mode="harness">DynaHarness</button>
+            <button data-mode="policy">Frozen π0.5 only</button>
+          </div>
+        </div>
+        <div id="workcell" aria-live="off"></div>
+        <div class="scene-caption" id="scene-caption"><span class="bubble"></span></div>
+        <div class="rates">
+          <span>safety 50 Hz</span><div class="lane" id="lane-safety" style="--c:#8BE0A4"></div>
+          <span>controller 20 Hz</span><div class="lane" id="lane-ctrl" style="--c:#7FE0EA"></div>
+          <span>fast brain 2 Hz</span><div class="lane" id="lane-fast" style="--c:#F6C07E"></div>
+          <span>slow brain, on demand</span><div class="lane slow" id="lane-slow" style="--c:#F5A3A5"></div>
+        </div>
+        <div class="scene-controls">
+          <button class="chip" id="btn-replay">Replay</button>
+          <button class="chip" id="btn-play">Pause</button>
+          <span class="hint">Schematic animation; the rates, percentages and step costs quoted in the captions are the paper's.</span>
+        </div>
+      </div>
+
+      <div class="brains">
+        <div class="brain task" id="p-task" title="Four LIBERO-Pro situations; the swap perturbation exchanges the mug and the plate">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M4 6h16M4 12h10M4 18h7"/><path d="m17 15 2 2 4-4"/></svg></span>Task <span class="tag">choose a situation</span></h4>
+          <div class="task-grid" role="group" aria-label="Task">
+            <button class="active" data-task="mug"><b>Mug into the basket</b><small>nominal · continue, latched end</small></button>
+            <button data-task="push"><b>Push the plate</b><small>goal_swap[5] · refuse, substitute</small></button>
+            <button data-task="stove"><b>Turn on the stove</b><small>goal_swap[7] · stall, recover, retry</small></button>
+            <button data-task="drawer"><b>Open the middle drawer</b><small>goal_swap[0] · stall, re-seat, pull</small></button>
+          </div>
+          <div class="task-foot"><button class="chip warn" id="btn-swap"><span class="dot"></span>Swap perturbation (mug &harr; plate)</button></div>
+        </div>
+        <div class="brain slow" id="p-slow" title="Semantic reasoning, on demand; proposes but never actuates">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3 3 3 0 0 0 2 3v1a3 3 0 0 0 3 3h1V4zM15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3 3 3 0 0 1-2 3v1a3 3 0 0 1-3 3h-1V4z"/></svg></span>Slow brain <span class="tag">Qwen3-VL-4B · on demand · 913 ms</span></h4>
+          <div class="status" id="s-status">idle</div>
+          <div class="body"></div>
+          <span class="flow"></span>
+        </div>
+        <div class="brain fast" id="p-fast" title="Physical governance at 2 Hz: ground, monitor, decide">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="#fff"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>Fast brain <span class="tag">2 Hz · 0.046 ms</span></h4>
+          <div class="gauges" aria-label="Monitor">
+            <span>progress</span><div class="bar"><i id="g-prog"></i></div><b id="g-prog-v">0.00</b>
+            <span>stagnation</span><div class="bar stag"><i id="g-stag"></i></div><b id="g-stag-v">0</b>
+            <span>risk</span><div class="bar risk"><i id="g-risk"></i></div><b id="g-risk-v">low</b>
+          </div>
+          <div class="decision"><span class="dchip idle" id="d-chip">idle</span><span class="dwhy" id="d-why">no command running</span></div>
+          <div class="cmd" id="d-cmd"></div>
+          <span class="flow"></span>
+        </div>
+        <div class="brain evo" id="p-evo" title="Append-only record that self-evolution reads offline">
+          <h4><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span>Evidence store <span class="tag">append-only</span></h4>
+          <div class="evidence" id="evidence"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="label">LIBERO-Pro, 800 new initial states after freezing</div><div class="value"><span data-count="75.2" data-suffix="%">0%</span><small>vs 17.5% frozen π0.5</small></div><div class="delta">+57.8 pp · 473 / 11 exclusive wins · same policy, 4B upper model</div></div>
+      <div class="kpi"><div class="label">Same capability library, full dynamic execution vs nominal one-step replanning</div><div class="value"><span data-count="74.0" data-suffix="%">0%</span><small>vs 63.9%</small></div><div class="delta">+10.1 pp · 89 / 8 exclusive wins · p = 2.0e-18</div></div>
+      <div class="kpi"><div class="label">Fast-brain decision vs slow-brain call (median under load)</div><div class="value"><span data-count="0.046" data-suffix=" ms">0 ms</span><small>vs 913 ms</small></div><div class="delta neutral">47,199 decisions · 3,090 planner calls · one evidence store</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ABSTRACT ============================ -->
+<section class="sec" id="abstract">
+  <div class="wrap">
+    <div class="abstract reveal">
+      <div>
+        <div class="eyebrow">Abstract</div>
+        <p>Pretrained robot policies provide useful action priors, but long-horizon manipulation still requires coordination between semantic reasoning and physical execution. Semantic reasoning operates at a coarser timescale than physical interaction, while episode-level failures provide limited guidance on which system component should be revised.</p>
+        <p><b>DynaHarness</b> is a dynamic physical harness that couples semantic reasoning with physical governance through a shared execution contract and turns failure evidence into validated capability revisions. The slow brain proposes capabilities and symbolic arguments; the fast brain grounds and monitors commands, refuses unresolved actions, substitutes capabilities and requests replans when needed. The contract bounds each accepted command and records execution evidence across analytic skills, recovery skills and the frozen VLA. Failure attribution localizes faults in these records and directs targeted revisions; paired regression checks govern admission or rejection.</p>
+        <p>On LIBERO-Pro, DynaHarness achieves <b>75.2%</b> on 800 newly sampled initial states, compared with <b>17.5%</b> for the frozen policy. With the same capability library, full dynamic execution reaches <b>74.0%</b> versus <b>63.9%</b> under nominal one-step replanning.</p>
+      </div>
+      <div class="contrib">
+        <div class="item"><div class="num" style="background:var(--green)">1</div><div><h5>Structured physical capabilities</h5><p>One execution contract grounds, bounds and refuses commands across analytic skills, recovery skills and a frozen VLA, recording evidence for revision.</p></div></div>
+        <div class="item"><div class="num" style="background:var(--orange)">2</div><div><h5>Fast-slow capability execution</h5><p>On-demand semantic reasoning and 2 Hz physical governance coordinate monitoring, substitution, recovery and replanning beyond nominal one-step replanning.</p></div></div>
+        <div class="item"><div class="num" style="background:var(--slate)">3</div><div><h5>Attribution-driven self-evolution</h5><p>Execution records localize failures and direct targeted revisions; paired regression checks govern admission; frozen snapshots keep their gains on new states.</p></div></div>
+        <div class="glance" aria-label="At a glance">
+          <div class="g"><b>800</b><span>new initial states</span></div>
+          <div class="g"><b>13</b><span>attribution layers</span></div>
+          <div class="g"><b>5 / 1</b><span>admitted / reverted</span></div>
+          <div class="g"><b>4 × 10</b><span>real tasks × trials</span></div>
+        </div>
+      </div>
+    </div>
+    <figure class="figure-embed reveal" style="margin-top:28px">
+      <img src="assets/img/fig/Teaser0926.png" alt="DynaHarness at a glance" data-zoom="assets/img/fig/Teaser0926.png">
+      <figcaption>Figure 1 of the paper. (a) From existing robot-agent paradigms to DynaHarness. (b) LIBERO-Pro success against upper-model scale. (c) Execution time: fast brain 0.046 ms, slow brain 0.913 s, Sonnet 5 via Claude Code 6.67 s. Click to enlarge.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ WHY: TIMESCALES ============================ -->
+<section class="sec alt" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why a fast brain</div>
+      <h2>Physical events are shorter than a slow decision.</h2>
+      <p class="sub">In <em>turn off the stove</em>, the frozen policy turned the knob off at step 44 and back on by step 55: success held for 0.55 s. A planner that observes the scene once every few seconds never sees it. DynaHarness reads the benchmark predicate at every control chunk, latches it, and lets the 2 Hz fast brain end the command.</p>
+    </div>
+    <div class="demo reveal">
+      <div class="demo-top">
+        <label>Decision period <input type="range" id="stove-period" min="5" max="100" step="5" value="20"> <span class="val" id="stove-period-val"></span></label>
+        <label>Event start <input type="range" id="stove-start" min="20" max="90" step="1" value="44"> <span class="val" id="stove-start-val"></span></label>
+        <label>Latched verdict <button class="switch" id="stove-latch" role="switch" aria-checked="false" aria-label="Latched verdict"></button></label>
+      </div>
+      <div class="demo-body">
+        <div id="stove-svg"></div>
+        <div class="verdict-line" id="stove-verdict"></div>
+        <div class="stat-row">
+          <div class="stat"><div class="label">Sampling every 20 steps, no latch</div><div class="value bad">25%</div><div class="sub">20 replays of the stove request</div></div>
+          <div class="stat"><div class="label">Bare policy, no harness</div><div class="value mid">80%</div><div class="sub">the policy's own success on this request</div></div>
+          <div class="stat"><div class="label">Latched, chunk-level read</div><div class="value ok">95%</div><div class="sub">paired ablation over 800 episodes: latch −28 net successes, p = 6.2e-5</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="card reveal">
+        <h4>Three clocks, one authority</h4>
+        <p class="small">Control steps run at 20 Hz, fast-brain decisions at 2 Hz, plan steps on demand. The slow brain does not drive the robot; the fast brain holds execution authority because it runs at a rate at which physical events can be observed. A 50 Hz envelope, lease and budget check sits underneath both.</p>
+        <div class="decide"><span>Continue</span><span>Intervene</span><span>Switch capability</span><span>Escalate to slow brain</span><span>End on latched verdict</span></div>
+      </div>
+      <div class="card reveal">
+        <h4>Failures run out the budget</h4>
+        <p class="small">In the analyzed round, 254 of 258 recorded failures ended at 99% or more of their budget while successes ended at a median of 67%. Across 5,805 episodes a failure spends 173 steps after its last progress against 51 for a success, and 220 when the planner layer failed. Detecting unproductive execution and supplying an effective replacement are separate requirements: the harness does both, through refusal, substitution and recovery inside the episode.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARADIGMS ============================ -->
+<section class="sec" id="paradigms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Positioning</div>
+      <h2>From policy adaptation and agentic orchestration to fast-slow physical self-evolution.</h2>
+      <p class="sub">Hover or tap a paradigm. Existing harnesses place a planner over a pretrained policy and treat checking as a pipeline stage; self-improving systems start from a failed task. DynaHarness gives execution an authority at the physical rate and gives evolution a layer to charge.</p>
+    </div>
+    <div class="grid4" id="paradigm-cards"></div>
+    <div class="paradigm-detail reveal" id="paradigm-detail"></div>
+    <div class="table-scroll"><table class="matrix reveal">
+      <thead><tr><th>Property</th><th>Policy learning</th><th>Planner + frozen skills</th><th>Failure → skill update</th><th class="dh">DynaHarness</th></tr></thead>
+      <tbody>
+        <tr><td>Semantic reasoning above the policy</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Execution authority at the physical rate (2 Hz decision, latched verdict)</td><td class="n">–</td><td class="p">pipeline stage</td><td class="n">–</td><td class="y">✓</td></tr>
+        <tr><td>Refusal is a recorded value with a reason</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">✓</td></tr>
+        <tr><td>Frozen VLA is one callable capability next to analytic and recovery skills</td><td class="n">–</td><td class="p">some</td><td class="p">some</td><td class="y">✓</td></tr>
+        <tr><td>Improvement without weight updates</td><td class="n">–</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Failure localized to one of N ordered layers before revision</td><td class="n">–</td><td class="n">–</td><td class="p">task-level</td><td class="y">✓</td></tr>
+        <tr><td>Paired gate and broader regression check that can reject a change</td><td class="n">–</td><td class="n">–</td><td class="p">varies</td><td class="y">✓</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">The matrix summarizes the paradigms as characterized in the paper's introduction and related work; individual systems differ.</p>
+  </div>
+</section>
+
+<!-- ============================ METHOD ============================ -->
+<section class="sec alt" id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Method</div>
+      <h2>One harness, two brains, one contract.</h2>
+      <p class="sub">Figure 2 of the paper, live: particles trace the context, advisory, command and evidence paths. Click any panel or box for its description and equations.</p>
+    </div>
+    <div class="arch reveal"><div id="arch-svg"></div></div>
+    <div class="arch-detail reveal">
+      <div class="card"><h4 id="arch-detail-title"></h4><p class="small" id="arch-detail-text" style="font-size:14px"></p><div class="eq" id="arch-detail-eq"></div></div>
+      <div class="card">
+        <h4>Physical execution contract</h4>
+        <div class="contract-grid" id="contract-grid" style="grid-template-columns:repeat(2,1fr)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EPISODE SCRUBBER ============================ -->
+<section class="sec" id="episode">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">The fast brain within one episode</div>
+      <h2>Scrub through recorded episodes, frozen policy alongside.</h2>
+      <p class="sub">Each DynaHarness clip is re-rendered from the episode's own event store, tool call by tool call, and reproduces the paper's keyframes pixel for pixel. The frozen-policy clip is a fresh rollout of the same seed recorded for this page, since &pi;0.5 sampling is not seeded; it failed at the full budget, as the paper's episode did. Press play or drag the slider; the evidence store follows.</p>
+    </div>
+    <div class="tabs reveal" id="case-tabs"></div>
+    <div class="scrub reveal" id="scrub"></div>
+    <div class="evs reveal" id="evs" data-src="assets/data/gs5_s22_events.json"></div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card reveal"><h4>Capability composition in the records</h4><p class="small">Successful episodes exist despite individual capability failures. <code>turn_knob_object</code> completes 21% of its invocations while its source cell improves from 0% to 95%. Refusing <code>push_object</code> in favor of carrying the plate turns a cell from 0% to 40%: the library supplies the alternative and execution governance decides when to select it.</p></div>
+      <div class="card reveal"><h4>The VLA is one capability, not the controller</h4><p class="small">Of 770 archived control episodes, 570 never invoke the VLA, with 96.7% success. Policy calls concentrate in difficult episodes after analytic execution struggles; in retained failures the VLA reaches 91.4% of steps in the hardest cells, where no cell exceeds 35%.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EVOLUTION ============================ -->
+<section class="sec alt" id="evolution">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Attribution-driven self-evolution</div>
+      <h2>Charge the failure to the layer that broke. Admit only what a paired gate cannot reject.</h2>
+      <p class="sub">One failed task is compatible with quite different repairs: the target was not grounded, the dispatched capability does not work, the verifier read the wrong instant, or recovery restored nothing. Attribution names the earliest of 13 ordered layers whose check fails, and the revision is stated in physical quantities rather than keyed to a task.</p>
+    </div>
+    <div class="evo-loop">
+      <div class="evo-left">
+        <div class="loop-svg card reveal" id="loop-svg"></div>
+        <div class="gate reveal">
+          <div class="g"><b>Σ successes ↑</b>total successes over the paired development cells do not fall</div>
+          <div class="g"><b>Σ harness-attributed failures ↓</b>failures charged to a harness layer do not rise</div>
+          <div class="g"><b>policy wins intact</b>every cell the bare policy already wins stays won</div>
+          <div class="g"><b>zero contamination</b>no contaminated episode; then broader regression checks</div>
+        </div>
+      </div>
+      <div class="registry reveal" id="registry"></div>
+    </div>
+    <div class="results-grid" style="margin-top:18px">
+      <div class="reveal" id="c-rounds"></div>
+      <div class="reveal" id="c-rejected"></div>
+      <div class="reveal" id="c-drawer"></div>
+      <div class="reveal" id="c-tools"></div>
+    </div>
+    <p class="note">A local improvement is not a global one: the rejected round also contained a genuine local gain (the hinged-door capability raised the microwave cell from 0% to 25%). Judged by the round total the two changes would have been kept or discarded together; the per-cell comparison kept one and reverted the other.</p>
+  </div>
+</section>
+
+<!-- ============================ RESULTS ============================ -->
+<section class="sec" id="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Results</div>
+      <h2>Explore the results by cell, by scope and by mechanism.</h2>
+      <p class="sub">Every chart has a table twin. Numbers are those of the paper: full-denominator benchmark success, 200 episodes per cell, benchmark predicate as the verdict.</p>
+    </div>
+    <div class="filters reveal">
+      <span class="lbl">Cell</span>
+      <div class="seg" id="f-cell"><button>Goal-T</button><button>Goal-S</button><button>10-T</button><button>10-S</button><button class="active">Average</button></div>
+      <span class="lbl">Scope</span>
+      <div class="seg" id="f-scope"><button class="active" data-scope="all">All rows</button><button data-scope="matched">Matched: Qwen3-VL-4B + frozen π0.5</button><button data-scope="published">Published references</button></div>
+    </div>
+    <div class="results-grid">
+      <div class="reveal span2" id="c-main"></div>
+      <div class="reveal span2" id="c-scale"></div>
+      <div class="reveal span2" id="c-heat"></div>
+      <div class="reveal" id="c-abl"></div>
+      <div class="reveal" id="c-mech"></div>
+      <div class="reveal" id="c-transfer"></div>
+      <div class="reveal" id="c-post"></div>
+      <div class="reveal" id="c-latency"></div>
+      <div class="reveal" id="c-budget"></div>
+      <div class="reveal" id="c-after"></div>
+      <div class="reveal" id="c-share"></div>
+      <div class="reveal" id="c-plus"></div>
+      <div class="reveal" id="c-libero"></div>
+    </div>
+    <div class="grid2" style="margin-top:18px">
+      <div class="card reveal"><h4>Slow-brain replacement</h4><p class="small">Replacing Qwen3-VL-4B with Claude Sonnet 5 through a coding agent gives 80% against 75% over 40 episodes on four untuned cells, and 75% with a tuned prompt, at 5.9× the latency per call and 18× the prompt tokens. In matched PhyAgentOS runs, changing the upper model from Qwen3-VL-4B to GPT-4o-mini changes success by one point.</p></div>
+      <div class="card reveal"><h4>Learning the fast brain</h4><p class="small">The evidence stores hold 2.59 million decisions over 27,581 episodes with the state the fast brain saw, the capability mask, the action and its reason. A learned variant matches the deterministic rule at 593 of 800 on the paired online comparison and escalates less often (12.2 against 15.4 per episode).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ REAL ROBOT ============================ -->
+<section class="sec alt" id="real">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Real-world experiments</div>
+      <h2>The same harness on a UR7e, with cameras instead of simulator state.</h2>
+      <p class="sub">Qwen 4B as the slow brain, SAM3 for segmentation, RealSense D435 and D405 cameras. Four tasks, ten trials each, object positions varied across trials.</p>
+    </div>
+    <div class="real-grid">
+      <div class="reveal">
+        <div class="video-grid">
+          <figure>
+            <div class="video-box pair"><video src="assets/video/real_circle_external.mp4" poster="assets/video/real_circle_external_poster.jpg" muted loop playsinline autoplay controls preload="metadata"></video><video src="assets/video/real_circle_wrist.mp4" poster="assets/video/real_circle_wrist_poster.jpg" muted loop playsinline autoplay preload="metadata"></video><span class="badge">Ring placement · external + wrist</span></div>
+            <figcaption>Grasp the yellow ring, place it over the green post, release and move away. One untrimmed trial, 29.5 s: 94 fast-brain ticks, two analytic skills, 16 tool calls, no intervention. Two stagnation flags (a missed-grasp check at 6 s, a stalled transport at 19 s) cleared at the next verification; the run ended on its own verified completion. Plan from the task manifest, no slow-brain call in this trial.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-box"><video src="assets/video/real_cups_external.mp4" poster="assets/video/real_cups_external_poster.jpg" muted loop playsinline autoplay controls preload="metadata"></video><span class="badge">Cup stacking · external view</span></div>
+            <figcaption>Stack the pink cup on the blue cup, then the green cup on the pink cup. One untrimmed trial, 117.9 s: four slow-brain calls (1.5 s, then 0.34 s each), 447 fast-brain ticks, four analytic skills. The run stopped on its own verified completion, a two-frame acceptance of both nestings.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-box"><video src="assets/video/real_bread_external.mp4" poster="assets/video/real_bread_external_poster.jpg" muted loop playsinline autoplay controls preload="metadata"></video><span class="badge">Bread into the toaster · external view</span></div>
+            <figcaption>Grasp the bread, place it in the left toaster slot, then press the white lever down. One untrimmed trial, 94.7 s. Placement stage: two slow-brain calls, 133 fast-brain ticks; seven stagnation flags (three missed-grasp checks, four stalled transports) cleared without an intervention. The lever press ends on a measured goal contract.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-box pair"><video src="assets/video/real_drawer_refusal_external.mp4" poster="assets/video/real_drawer_refusal_external_poster.jpg" muted loop playsinline autoplay controls preload="metadata"></video><video src="assets/video/real_drawer_refusal_wrist.mp4" poster="assets/video/real_drawer_refusal_wrist_poster.jpg" muted loop playsinline autoplay preload="metadata"></video><span class="badge">Drawer · refused before motion</span></div>
+            <figcaption>Ring into the red drawer: the preflight scene check refused the command 3.2 s in, before any arm motion, with the recorded reason <code>handle: object moved from the taught scene</code>. External and wrist views, 3.3 s.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="reveal">
+        <figure class="figure-embed">
+          <img src="assets/img/fig/Real_robot.png" alt="Real robot setup and four tasks" data-zoom="assets/img/fig/Real_robot.png" loading="lazy">
+          <figcaption>Workspace and the four tasks. Click to enlarge.</figcaption>
+        </figure>
+        <div class="real-tiles" id="real-tiles"></div>
+        <div class="card verdicts">
+          <h4>The verdict comes from the cameras</h4>
+          <ul>
+            <li><b>Ring placement</b> ends on a placement check from a fresh observation: the measured ring-to-post relation must hold before the command completes.</li>
+            <li><b>Cup stacking</b> ends on a two-frame acceptance of both nestings from SAM3 segmentation; the run stops on verified completion.</li>
+            <li><b>Bread placement</b> and the lever press each end on a measured goal contract read from fresh hardware state, not on a model's judgment.</li>
+            <li><b>Drawer placement</b> starts with a scene check against the taught scene; a moved handle refuses the command before any motion, reason recorded.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <figure class="figure-embed reveal" style="margin-top:18px">
+      <img src="assets/img/fig/Realworld.png" alt="Real-world execution sequences" data-zoom="assets/img/fig/Realworld.png" loading="lazy">
+      <figcaption>Execution sequences for ring placement, cup stacking, bread placement and ring placement in a drawer: the initial scene and four stages each.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ BASELINES ============================ -->
+<section class="sec" id="baselines">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Where the difference lies</div>
+      <h2>Diagnostic runs of the baselines, with the same 4B model where possible.</h2>
+      <p class="sub">Frames and quotes come from the baselines' own records. A retry that acts as extra budget, a verifier that changes what is recorded rather than what happens, a tool that reads simulator poses, a decision every several seconds.</p>
+    </div>
+    <div class="bl reveal" id="bl">
+      <div class="bl-tabs" id="bl-tabs" role="tablist"></div>
+      <div class="bl-panel" id="bl-panel"></div>
+    </div>
+    <p class="note">Every video, frame, quote and number in this section comes from the baselines' own run records, re-encoded for the web and otherwise unchanged. Published rows are taken from the cited papers; matched rows are our runs with the same Qwen3-VL-4B upper model and the same frozen π0.5.</p>
+  </div>
+</section>
+
+<!-- ============================ BIBTEX ============================ -->
+<section class="sec alt" id="bibtex">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Citation</div>
+      <h2>BibTeX</h2>
+    </div>
+    <div class="bib-wrap reveal"><pre class="bib" id="bib"></pre><button class="btn light small" id="bib-copy">Copy</button></div>
+    <p class="note">Code, evaluation configurations and scripts, and the run records behind every aggregate and paired comparison: <a href="https://github.com/Denghaoyuan123/DynaHarness" target="_blank" rel="noopener">github.com/Denghaoyuan123/DynaHarness</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/img/logo.png" alt="">
+    <span>DynaHarness · Nanyang Technological University and Nanjing University. Figures and numbers are those of the submitted manuscript. <a href="https://github.com/Denghaoyuan123/DynaHarness" target="_blank" rel="noopener">Code</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><img src="" alt="Enlarged figure"><button class="btn light small close">Close</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/baselines.js"></script>
+<script src="assets/js/bl_special.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

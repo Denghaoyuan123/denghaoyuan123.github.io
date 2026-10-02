@@ -186,6 +186,21 @@ a:hover .papertitle { color: var(--accent-hover); }
 
 em { color: var(--muted); }
 
+.venue-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid #b8d5fb;
+  border-radius: 6px;
+  color: #124d80;
+  background: #e8f2ff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.venue-badge a { color: inherit; }
+.venue-badge a:hover { color: var(--accent-hover); }
+
 /* Paper thumbnail cells are the only <td> at exactly 30% width,
    so this scopes media styling to publication thumbnails. */
 td[style*="width:30%"] img,
